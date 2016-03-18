@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.0.final using JasperReports Library version 6.2.0  -->
+<!-- 2016-03-18T13:15:41 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Ejemplo" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="05e24637-0656-4709-a4f5-96f1c479f1b1">
+	<parameter name="datosEjemplo" class="es.damoresa.jasperutils.test.model.TestModelClass" isForPrompting="false"/>
+	<parameter name="ejemploSubreport" class="net.sf.jasperreports.engine.JasperReport" isForPrompting="false"/>
+	<parameter name="ejemploSubreportDatasource" class="net.sf.jasperreports.engine.JRDataSource" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="80" y="19" width="400" height="30" uuid="e04227cc-4629-4786-b855-26f562858200"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Esto es un PDF de prueba generado con JasperBuilder]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="100" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="100" height="20" uuid="c0fdd19a-8ae9-498a-8bea-29eb851a35b8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="30" width="100" height="20" uuid="5cb318a0-3cae-4b56-9e2f-ee7883184ce6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[Login]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="50" width="100" height="40" uuid="42d6d4ff-80f0-40ed-96a2-ae15c45e3897"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="11"/>
+				</textElement>
+				<text><![CDATA[Detalle]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="10" width="280" height="20" uuid="9334c6e9-455a-4640-9fc4-49f64b5fa46b"/>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{datosEjemplo}.getNombre()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="30" width="280" height="20" uuid="d8c6f4f7-3cff-4e53-a44d-3b8e725f8430"/>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{datosEjemplo}.getLogin()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="50" width="280" height="40" uuid="3b1e21e5-5327-4c27-b019-f1fee698dcbe"/>
+				<textElement verticalAlignment="Middle">
+					<paragraph leftIndent="5" rightIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{datosEjemplo}.getDescripcion()]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="50" splitType="Stretch">
+			<subreport>
+				<reportElement positionType="Float" x="0" y="5" width="318" height="37" isRemoveLineWhenBlank="true" backcolor="#F0EDED" uuid="253d8fd3-88c1-4241-b49c-e76f61c0a691">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<dataSourceExpression><![CDATA[$P{ejemploSubreportDatasource}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{ejemploSubreport}]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="530" y="0" width="23" height="19" uuid="2c03beb8-c767-4fc6-af72-7a83002b58a8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="20" y="0" width="100" height="20" uuid="f55e931b-fad7-487c-8996-92ea9002955b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" size="12"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[PDF de prueba]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>
